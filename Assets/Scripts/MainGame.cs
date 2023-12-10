@@ -2,8 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SystemBase : MonoBehaviour
+public class MainGame : MonoBehaviour
 {
+
+    public List<PowerUpScroll> PowerUp;
+    public GameObject PrefabPowerUp;
+    public GameObject PrefabParent;
+
+
     // Start is called before the first frame update
     void Start()
     {
