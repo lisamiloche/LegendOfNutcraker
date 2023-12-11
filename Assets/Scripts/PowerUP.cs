@@ -5,6 +5,9 @@ using UnityEngine.UI;
 using TMPro;
 using System;
 
+
+
+[Serializable]
 public class PowerUP : MonoBehaviour
 {
     public Image Image;
