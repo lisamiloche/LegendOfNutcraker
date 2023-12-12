@@ -1,15 +1,15 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using System;
-
+using UnityEngine;
 
 
 [Serializable]
 public class PowerUp : MonoBehaviour
 {
+    
     public Image Icon;
     public TMP_Text TextLevel;
     public TMP_Text TextName;
@@ -25,21 +25,13 @@ public class PowerUp : MonoBehaviour
 
     public void Initilize(PowerUpScroll powerUP)
     {
-        
-        Icon.sprite = powerUP.SpriteIcon;
+        //Icon.sprite = powerUP.SpriteIcon;
         TextName.text = powerUP.Name + System.Environment.NewLine + powerUP.Damage;
         TextCost.text = powerUP.Cost + "£";
     }
 
-}
+    
 
-[Serializable]
-public class PowerUpScroll
-{
-    public int Level;
-    public string Name;
-    public int Cost;
-    public int Damage;
-    public Image SpriteIcon;
+   
 }
 

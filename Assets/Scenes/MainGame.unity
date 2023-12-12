@@ -236,7 +236,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1802770554}
+    m_TransformParent: {fileID: 1043395802}
     m_Modifications:
     - target: {fileID: 7147456464975909218, guid: 485dcca9a7ad7fd41b9cb3a22306cf70, type: 3}
       propertyPath: m_Name
@@ -248,11 +248,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9064550799263979742, guid: 485dcca9a7ad7fd41b9cb3a22306cf70, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 613
+      value: 931.36975
       objectReference: {fileID: 0}
     - target: {fileID: 9064550799263979742, guid: 485dcca9a7ad7fd41b9cb3a22306cf70, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6
+      value: -503.4431
       objectReference: {fileID: 0}
     - target: {fileID: 9064550799263979742, guid: 485dcca9a7ad7fd41b9cb3a22306cf70, type: 3}
       propertyPath: m_LocalPosition.z
@@ -674,20 +674,19 @@ MonoBehaviour:
     Name: ATK
     Cost: 10
     Damage: 10
-    Sprite: {fileID: 0}
+    SpriteIcon: {fileID: 0}
   - Level: 1
     Name: HP
-    Cost: 10
-    Damage: 10
-    Sprite: {fileID: 0}
+    Cost: 100
+    Damage: 20
+    SpriteIcon: {fileID: 0}
   - Level: 1
     Name: HP Recovery
     Cost: 10
     Damage: 10
-    Sprite: {fileID: 0}
+    SpriteIcon: {fileID: 0}
   PrefabPowerUp: {fileID: 7147456464975909218, guid: 485dcca9a7ad7fd41b9cb3a22306cf70, type: 3}
   PrefabParent: {fileID: 1145401597}
-  powerUP: {fileID: 0}
 --- !u!1 &710920285
 GameObject:
   m_ObjectHideFlags: 0
@@ -825,6 +824,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1145401598}
+  - {fileID: 218083510}
   m_Father: {fileID: 1802770554}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1235,7 +1235,6 @@ RectTransform:
   - {fileID: 1043395802}
   - {fileID: 358112072}
   - {fileID: 1869071733}
-  - {fileID: 218083510}
   m_Father: {fileID: 517445787}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
