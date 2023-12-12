@@ -11,5 +11,8 @@ public class PowerUpScroll
     public string Name;
     public int Cost;
     public int Damage;
-    public Image SpriteIcon;
+    public Sprite SpriteIcon;
+
+
+    
 }

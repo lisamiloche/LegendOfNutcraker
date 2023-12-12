@@ -14,24 +14,30 @@ public class PowerUp : MonoBehaviour
     public TMP_Text TextLevel;
     public TMP_Text TextName;
     public TMP_Text TextCost;
+    PowerUpScroll _powerUP;
 
 
-    public void OnClick(PowerUpScroll Up)
+
+
+    public void Initialize(PowerUpScroll powerUP)
     {
-        Up.Level++;
-        Up.Cost++;
-        Up.Damage += 10;
-    }
-
-    public void Initilize(PowerUpScroll powerUP)
-    {
-        //Icon.sprite = powerUP.SpriteIcon.sprite;
+        _powerUP = powerUP;
+        Icon.sprite = powerUP.SpriteIcon;
         TextName.text = powerUP.Name + System.Environment.NewLine + powerUP.Damage;
         TextCost.text = powerUP.Cost + "£";
+        TextLevel.text = "Lv: " + powerUP.Level;
     }
 
-    
 
-   
+    public void OnClick()
+    {
+        Debug.Log("1000");
+        _powerUP.Level++;
+        _powerUP.Cost++;
+        _powerUP.Damage += 10;
+        Initialize(_powerUP);
+    }
+
+
 }
 
