@@ -157,6 +157,7 @@ MonoBehaviour:
   spellPrefab: {fileID: 597134178}
   Enemy: {fileID: 1095213324}
   player: {fileID: 187492691}
+  playerLife: 5
 --- !u!212 &187492693
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -800,6 +801,7 @@ MonoBehaviour:
     SpriteIcon: {fileID: 21300000, guid: e57d4ffc52f12bb4b83ef91352e3f941, type: 3}
   PrefabPowerUp: {fileID: 2141299525335161691, guid: c93a7e4b8f9e7ab49abc21cc86f7724e, type: 3}
   PrefabParent: {fileID: 1145401597}
+  TextMoney: {fileID: 0}
   Money: 0
 --- !u!1 &624095434
 GameObject:
