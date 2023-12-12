@@ -30,10 +30,10 @@ public class MainGame : MonoBehaviour
 
     public void Initilize(PowerUP powerUP)
     {
-        _upgrade = powerUP;
-        Image.sprite = powerUP.Image;
-        Text.text = powerUP.Name + System.Environment.NewLine + powerUP.;
-        TextCost.text = powerUP.Cost + "£";
+        //_upgrade = powerUP;
+        //Image.sprite = powerUP.Image;
+        //Text.text = powerUP.Name + System.Environment.NewLine + powerUP.;
+        //TextCost.text = powerUP.Cost + "£";
     }
 
 
