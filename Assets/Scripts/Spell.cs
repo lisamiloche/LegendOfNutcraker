@@ -1,19 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Spell : MonoBehaviour
 {
 
-    public float speed;
+    
     public GameObject spellPrefab;
     public GameObject Enemy;
     Enemies enemies;
+    public int speed;
 
     public void Update()
     {
-        transform.Translate(Vector2.right * speed * Time.deltaTime);
+        Direction();
         
     }
 
@@ -21,7 +23,6 @@ public class Spell : MonoBehaviour
     {
         if (col.gameObject.name == "Enemy")
         {
-            //Debug.Log(col.gameObject.name);
             Destroy(spellPrefab);
 
             enemies = GameObject.Find("Enemy").GetComponent<Enemies>();
@@ -30,6 +31,11 @@ public class Spell : MonoBehaviour
             Debug.Log(enemies.enemyLife);
 
         }
+    }
+
+    public void Direction()
+    {
+        transform.Translate(Vector2.right * speed * Time.deltaTime);
     }
 
 }

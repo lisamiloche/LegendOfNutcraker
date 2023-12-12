@@ -90,4 +90,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  sprite: {fileID: 21300000, guid: cbabd2281a60f6f409faa513e609f9db, type: 3}
+  spellPrefab: {fileID: 5182661146169070817}
+  Enemy: {fileID: 3633010917974936863, guid: d6b38407d11c6e34bab9e175e0985e56, type: 3}
