@@ -10,7 +10,7 @@ public class PowerUpScroll
     public int Level;
     public string Name;
     public int Cost;
-    public int Damage;
+    public float Damage;
     public Sprite SpriteIcon;
 
 

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine;
+//using Unity.Mathematics;
 
 
 [Serializable]
@@ -31,10 +32,10 @@ public class PowerUp : MonoBehaviour
 
     public void OnClick()
     {
-        Debug.Log("1000");
         _powerUP.Level++;
         _powerUP.Cost++;
-        _powerUP.Damage += 10;
+        Mathf.Round(_powerUP.Damage *= 1.1f);
+        //Mathf.RoundToInt(_powerUP.Damage);
         Initialize(_powerUP);
     }
 
