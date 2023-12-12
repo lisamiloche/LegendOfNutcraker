@@ -11,14 +11,14 @@ public class Player : MonoBehaviour
     public GameObject player;
 
 
-    /*private void OnTriggerEnter2D(Collider2D col)
+    private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.name == "Enemy")
         {
             //Debug.Log(col.gameObject.name);
             Destroy(player);
         }
-    }*/
+    }
 
 
 

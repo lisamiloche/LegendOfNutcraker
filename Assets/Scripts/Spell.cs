@@ -9,6 +9,7 @@ public class Spell : MonoBehaviour
     public float speed;
     public GameObject spellPrefab;
     public GameObject Enemy;
+    Enemies enemies;
 
     public void Update()
     {
@@ -22,6 +23,17 @@ public class Spell : MonoBehaviour
         {
             //Debug.Log(col.gameObject.name);
             Destroy(spellPrefab);
+
+            enemies = GameObject.Find("Enemy").GetComponent<Enemies>();
+            
+            enemies.enemyLife--;
+            Debug.Log(enemies.enemyLife);
+            
+            if (enemies.enemyLife <= 0)
+            {
+                Destroy(Enemy);
+            }
+
         }
     }
 
