@@ -1,24 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Spell : MonoBehaviour
 {
 
-    public float speed = 5f;
-    private Vector3 direction;
+    public float speed;
+    public GameObject spellPrefab;
+    public GameObject Enemy;
 
-    void Start()
+    public void Update()
     {
-        Rigidbody2D rigidBody = GetComponent<Rigidbody2D>();
-        rigidBody.velocity = direction * speed;
+        transform.Translate(Vector2.right * speed * Time.deltaTime);
+        
     }
 
-    public void SetDirection(Vector3 newDirection)
+    private void OnTriggerEnter2D(Collider2D col)
     {
-        direction = newDirection;
-    
+        if (col.gameObject.name == "Enemy")
+        {
+            Debug.Log(col.gameObject.name);
+            Destroy(spellPrefab);
+        }
     }
-
 
 }
