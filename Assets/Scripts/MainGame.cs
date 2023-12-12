@@ -9,9 +9,7 @@ public class MainGame : MonoBehaviour
     public List<PowerUpScroll> PowerUp;
     public GameObject PrefabPowerUp;
     public GameObject PrefabParent;
-    public PowerUP powerUP;
-
-
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -21,10 +19,11 @@ public class MainGame : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        foreach(var PowerUp in PowerUp)
+        foreach (var PowerUp in PowerUp)
         {
             GameObject go = GameObject.Instantiate(PrefabPowerUp, PrefabParent.transform, false);
             go.transform.localPosition = Vector3.zero;
+            //go.GetComponent<PowerUp>().Initilize(powerUP);
         }
     }
 
