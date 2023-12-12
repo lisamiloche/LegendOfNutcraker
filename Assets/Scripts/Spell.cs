@@ -28,11 +28,6 @@ public class Spell : MonoBehaviour
             
             enemies.enemyLife--;
             Debug.Log(enemies.enemyLife);
-            
-            if (enemies.enemyLife <= 0)
-            {
-                Destroy(Enemy);
-            }
 
         }
     }
