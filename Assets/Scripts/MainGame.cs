@@ -8,9 +8,10 @@ public class MainGame : MonoBehaviour
 
     public List<PowerUpScroll> PowerUp = new List<PowerUpScroll>();
     public GameObject PrefabPowerUp;
-    public GameObject PrefabParent; 
+    public GameObject PrefabParent;
+    public int Money;
     
-    // Start is called before the first frame update
+
     void Start()
     {
         foreach (var Powerup in PowerUp)
@@ -21,10 +22,6 @@ public class MainGame : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-
-        //GetComponent<PowerUp>().Initialize(Powerup);
-    }
+    
 
 }
