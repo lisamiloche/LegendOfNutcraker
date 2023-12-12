@@ -8,7 +8,7 @@ using System;
 
 
 [Serializable]
-public class PowerUP : MonoBehaviour
+public class PowerUp : MonoBehaviour
 {
     public Image Image;
     public TMP_Text TextLevel;
@@ -23,7 +23,13 @@ public class PowerUP : MonoBehaviour
         Up.Damage += 10;
     }
 
-
+    public void Initilize(PowerUpScroll powerUP)
+    {
+        
+        //Image.sprite = powerUP.Sprite;
+        TextName.text = powerUP.Name + System.Environment.NewLine + powerUP.Damage;
+        TextCost.text = powerUP.Cost + "£";
+    }
 
 }
 
