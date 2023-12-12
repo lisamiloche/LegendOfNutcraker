@@ -20,7 +20,7 @@ public class Spell : MonoBehaviour
     {
         if (col.gameObject.name == "Enemy")
         {
-            Debug.Log(col.gameObject.name);
+            //Debug.Log(col.gameObject.name);
             Destroy(spellPrefab);
         }
     }
