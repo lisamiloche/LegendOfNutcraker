@@ -222,7 +222,7 @@ GameObject:
   - component: {fileID: 7536714840876882052}
   - component: {fileID: 4298836492843557662}
   m_Layer: 5
-  m_Name: PowerUp
+  m_Name: PowerUP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -269,6 +269,8 @@ MonoBehaviour:
   TextLevel: {fileID: 6645143520036071299}
   TextName: {fileID: 4804115588953377115}
   TextCost: {fileID: 7826389416918454115}
+  button: {fileID: 51267014847696773}
+  MainGame: {fileID: 0}
 --- !u!1 &3481316983634868448
 GameObject:
   m_ObjectHideFlags: 0

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+//using UnityEngine.UIElements;
 
 public class MainGame : MonoBehaviour
 {
@@ -11,11 +12,12 @@ public class MainGame : MonoBehaviour
     public GameObject PrefabPowerUp;
     public GameObject PrefabParent;
     public TMP_Text TextMoney;
-    public int Money;
+    public float Money;
     
 
     void Start()
     {
+        
         foreach (var Powerup in PowerUp)
         {
             GameObject go = GameObject.Instantiate(PrefabPowerUp, PrefabParent.transform, false);
@@ -24,6 +26,11 @@ public class MainGame : MonoBehaviour
         }
     }
 
-    
 
+    private void Update()
+    {
+        TextMoney.text = Money + "";
+    }
+
+    
 }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine;
+//using UnityEngine.UIElements;
 //using Unity.Mathematics;
 
 
@@ -15,6 +16,7 @@ public class PowerUp : MonoBehaviour
     public TMP_Text TextLevel;
     public TMP_Text TextName;
     public TMP_Text TextCost;
+    public Button button;
     PowerUpScroll _powerUP;
 
 
@@ -24,10 +26,12 @@ public class PowerUp : MonoBehaviour
     {
         _powerUP = powerUP;
         Icon.sprite = powerUP.SpriteIcon;
-        TextName.text = powerUP.Name + System.Environment.NewLine + powerUP.Damage;
-        TextCost.text = powerUP.Cost + "£";
+        TextName.text = powerUP.Name + System.Environment.NewLine + Mathf.Round(powerUP.Damage);
+        TextCost.text = Mathf.Round(powerUP.Cost) + "£";
         TextLevel.text = "Lv: " + powerUP.Level;
     }
+
+  
 
 
     public void OnClick()
@@ -35,7 +39,7 @@ public class PowerUp : MonoBehaviour
         _powerUP.Level++;
         _powerUP.Cost *= _powerUP.Augmentation;
         _powerUP.Damage *= 1.1f;
-        Initialize(_powerUP);
+        Initialize(_powerUP); 
     }
 
 
