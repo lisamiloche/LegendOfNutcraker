@@ -157,6 +157,7 @@ MonoBehaviour:
   spellPrefab: {fileID: 597134178}
   Enemy: {fileID: 1095213324}
   player: {fileID: 187492691}
+  playerLife: 5
 --- !u!212 &187492693
 SpriteRenderer:
   m_ObjectHideFlags: 0
