@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class MainGame : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class MainGame : MonoBehaviour
     public List<PowerUpScroll> PowerUp = new List<PowerUpScroll>();
     public GameObject PrefabPowerUp;
     public GameObject PrefabParent;
+    public TMP_Text TextMoney;
     public int Money;
     
 
