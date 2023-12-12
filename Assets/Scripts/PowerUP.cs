@@ -25,7 +25,7 @@ public class PowerUp : MonoBehaviour
 
     public void Initilize(PowerUpScroll powerUP)
     {
-        //Icon.sprite = powerUP.SpriteIcon;
+        //Icon.sprite = powerUP.SpriteIcon.sprite;
         TextName.text = powerUP.Name + System.Environment.NewLine + powerUP.Damage;
         TextCost.text = powerUP.Cost + "£";
     }
