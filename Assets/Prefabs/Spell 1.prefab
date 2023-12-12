@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spellPrefab: {fileID: 1608584347871598533}
-  Enemy: {fileID: 0}
+  Enemy: {fileID: 5506656510856936979, guid: c65908eab50816549ae66429256d4256, type: 3}
   speed: 5
 --- !u!61 &407998571659815741
 BoxCollider2D:

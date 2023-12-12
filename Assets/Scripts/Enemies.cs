@@ -13,8 +13,6 @@ public class Enemies : MonoBehaviour
     public GameObject Enemy;
     MainGame MainGame;
     public int MoneyEarn;
-    Player player;
-
 
     void Update()
     {
@@ -27,9 +25,7 @@ public class Enemies : MonoBehaviour
         if (enemyLife <= 0)
         {
             Destroy(Enemy);
-            MainGame.Money += MoneyEarn; //pb avec cette ligne
+            //MainGame.Money += MoneyEarn; //pb avec cette ligne
         }
-
     }
-
 }

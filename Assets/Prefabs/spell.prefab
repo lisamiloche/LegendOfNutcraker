@@ -89,6 +89,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed7d2962790d37f4e8e7e1bb92b918fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
   spellPrefab: {fileID: 5182661146169070817}
-  Enemy: {fileID: 3633010917974936863, guid: d6b38407d11c6e34bab9e175e0985e56, type: 3}
+  Enemy: {fileID: 5506656510856936979, guid: c65908eab50816549ae66429256d4256, type: 3}
+  speed: 5
