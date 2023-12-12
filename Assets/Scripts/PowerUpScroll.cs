@@ -9,9 +9,10 @@ public class PowerUpScroll
 {
     public int Level;
     public string Name;
-    public int Cost;
+    public float Cost;
     public float Damage;
     public Sprite SpriteIcon;
+    public float Augmentation;
 
 
     

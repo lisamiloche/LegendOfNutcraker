@@ -33,9 +33,8 @@ public class PowerUp : MonoBehaviour
     public void OnClick()
     {
         _powerUP.Level++;
-        _powerUP.Cost++;
-        Mathf.Round(_powerUP.Damage *= 1.1f);
-        //Mathf.RoundToInt(_powerUP.Damage);
+        _powerUP.Cost *= _powerUP.Augmentation;
+        _powerUP.Damage *= 1.1f;
         Initialize(_powerUP);
     }
 
