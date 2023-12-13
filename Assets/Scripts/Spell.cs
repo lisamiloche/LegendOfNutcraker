@@ -13,6 +13,14 @@ public class Spell : MonoBehaviour
     Enemies enemies;
     public int speed;
     public float TimerDeleteSpell;
+    public float Damage;
+    private MainGame mainGame;
+
+    private void Start()
+    {
+        mainGame = FindFirstObjectByType<MainGame>();
+    }
+
 
     public void Update()
     {
@@ -32,8 +40,8 @@ public class Spell : MonoBehaviour
             Destroy(spellPrefab);
 
             enemies = GameObject.Find("Enemy").GetComponent<Enemies>();
-            
-            enemies.enemyLife--;
+            Damage = mainGame.PowerUps[0].Damage;
+            enemies.enemyLife-= (int) Damage;
             Debug.Log(enemies.enemyLife);
 
         }
