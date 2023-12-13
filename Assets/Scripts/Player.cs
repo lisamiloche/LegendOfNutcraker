@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     public int rangeShoot;
     public float timerDamage;
     public float cooldownDamage;
+    public bool isOkayToScroll;
 
 
     private void Update()
@@ -27,8 +28,6 @@ public class Player : MonoBehaviour
         {
             Enemies enemies = col.GetComponent<Enemies>();
 
-            
-
             if (timerDamage > 0)
             {
                 timerDamage -= Time.deltaTime;
@@ -36,7 +35,7 @@ public class Player : MonoBehaviour
             }
 
             if (timerDamage <= 0)
-            { 
+            {
                 playerLife--;
                 Debug.Log(playerLife);
 
@@ -46,7 +45,7 @@ public class Player : MonoBehaviour
                 }
                 timerDamage = cooldownDamage;
             }
-            
+
 
             if (enemies != null)
             {
@@ -86,13 +85,23 @@ public class Player : MonoBehaviour
                     GameObject spell = Instantiate(spellPrefab, transform.position, Quaternion.identity);
                     Enemy = nearestEnemy;
                 }
-                
+
             }
+
 
         }
 
+        /*if (GameObject.FindWithTag("Spell") == null)
+        {
+            isOkayToScroll = true;
+        }
+        else
+        {
+            isOkayToScroll = false;
+        }*/
 
     }
-
 }
+
+
 
