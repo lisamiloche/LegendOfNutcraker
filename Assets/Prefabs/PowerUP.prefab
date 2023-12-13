@@ -270,7 +270,7 @@ MonoBehaviour:
   TextName: {fileID: 4804115588953377115}
   TextCost: {fileID: 7826389416918454115}
   button: {fileID: 51267014847696773}
-  MainGame: {fileID: 0}
+  Money: 0
 --- !u!1 &3481316983634868448
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,6 +14,4 @@ public class PowerUpScroll
     public Sprite SpriteIcon;
     public float Augmentation;
 
-
-    
 }

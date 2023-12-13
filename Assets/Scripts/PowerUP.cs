@@ -18,7 +18,8 @@ public class PowerUp : MonoBehaviour
     public TMP_Text TextCost;
     public Button button;
     PowerUpScroll _powerUP;
-
+    public float money;
+    MainGame _mainGame;
 
 
 
@@ -30,12 +31,13 @@ public class PowerUp : MonoBehaviour
         TextCost.text = Mathf.Round(powerUP.Cost) + "£";
         TextLevel.text = "Lv: " + powerUP.Level;
     }
-
-  
+    
 
 
     public void OnClick()
     {
+        money = GetComponent<MainGame>().Money;
+        money -= _powerUP.Cost;
         _powerUP.Level++;
         _powerUP.Cost *= _powerUP.Augmentation;
         _powerUP.Damage *= 1.1f;
