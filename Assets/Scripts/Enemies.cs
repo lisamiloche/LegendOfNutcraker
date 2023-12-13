@@ -15,7 +15,12 @@ public class Enemies : MonoBehaviour
     public float MoneyEarn;
     private bool isCollided = false;
     public GameObject _Script;
+    private EnemySpawner spawner;
 
+    private void Start()
+    {
+        spawner = FindFirstObjectByType<EnemySpawner>();
+    }
 
 
     void Update()
@@ -25,7 +30,6 @@ public class Enemies : MonoBehaviour
             MoveEnemy();
         }
 
-
         Died();
     }
 
@@ -34,8 +38,8 @@ public class Enemies : MonoBehaviour
         if (enemyLife <= 0)
         {
             Destroy(Enemy);
-            //_mainGame.Money += MoneyEarn;
             _Script.GetComponent<MainGame>().Money += MoneyEarn;
+            spawner.enemiesAlive--;
 
         }
     }

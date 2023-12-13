@@ -7,9 +7,10 @@ using UnityEngine.UI;
 public class Spell : MonoBehaviour
 {
 
-    
+
     public GameObject spellPrefab;
     public GameObject Enemy;
+    public GameObject PowerUP;
     Enemies enemies;
     public int speed;
     public float TimerDeleteSpell;
@@ -30,15 +31,14 @@ public class Spell : MonoBehaviour
         {
             Destroy(spellPrefab);
         }
-        
+
     }
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.name == "Enemy")
+        if (col.CompareTag("Enemy"))
         {
             Destroy(spellPrefab);
-
             enemies = GameObject.Find("Enemy").GetComponent<Enemies>();
             Damage = mainGame.PowerUps[0].Value;
             enemies.enemyLife-= (int) Damage;
