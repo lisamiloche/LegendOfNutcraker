@@ -735,10 +735,10 @@ MonoBehaviour:
     ValueUp: 0.3
   - Level: 1
     Name: ATK Speed
-    Cost: 60
+    Cost: 1
     Value: 1
     SpriteIcon: {fileID: 21300000, guid: f1768e6b2125bf34181dad5d9ab7ddae, type: 3}
-    Augmentation: 1.4
+    Augmentation: 1
     ValueUp: 0.01
   - Level: 0
     Name: 
@@ -1819,7 +1819,7 @@ PrefabInstance:
       objectReference: {fileID: 611912817}
     - target: {fileID: 5835413941442888029, guid: c65908eab50816549ae66429256d4256, type: 3}
       propertyPath: enemyLife
-      value: 1
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 5918080036846988258, guid: c65908eab50816549ae66429256d4256, type: 3}
       propertyPath: m_RootOrder
