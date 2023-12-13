@@ -18,6 +18,9 @@ public class MainGame : MonoBehaviour
     public TMP_Text TextMoney;
     public float Money;
     PowerUp _haspowerUp;
+    public GameObject PopUp;
+    int _timeChest = 1000 * 300;
+    public int timePopUp = 0;
     
 
     void Start()
@@ -41,12 +44,19 @@ public class MainGame : MonoBehaviour
     private void Update()
     {
         TextMoney.text = Money.ToString();
-        
-        
+
+        timePopUp++;
+        if (timePopUp == _timeChest)
+        {
+            Chest();
+        }
     }
 
 
-
+    public void Chest()
+    {
+        PopUp.SetActive(true);
+    }
 
     
 }

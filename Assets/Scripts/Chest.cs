@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class Chest : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    MainGame game;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        game = FindFirstObjectByType<MainGame>();
+    }
+    public void OnClickGet()
+    {
+        game.Money += 100;
+        game.PopUp.SetActive(false);
+        game.timePopUp = 0;
     }
 }
