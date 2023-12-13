@@ -12,12 +12,14 @@ public class Enemies : MonoBehaviour
     public int enemyLife;
     public int enemyDamage;
     public GameObject Enemy;
-    public int MoneyEarn;
+    public float MoneyEarn;
     private bool isCollided = false;
+    public GameObject _Script;
+
+
 
     void Update()
     {
-
         if (!isCollided)
         {
             MoveEnemy();
@@ -32,7 +34,9 @@ public class Enemies : MonoBehaviour
         if (enemyLife <= 0)
         {
             Destroy(Enemy);
-            //MainGame.Money += MoneyEarn; //pb avec cette ligne
+            //_mainGame.Money += MoneyEarn;
+            _Script.GetComponent<MainGame>().Money += MoneyEarn;
+
         }
     }
 

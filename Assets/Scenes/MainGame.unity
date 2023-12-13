@@ -157,7 +157,7 @@ MonoBehaviour:
   spellPrefab: {fileID: 1608584347871598533, guid: 1aa798f665e3b694db5944bbaac3c552, type: 3}
   Enemy: {fileID: 5506656510856936979, guid: c65908eab50816549ae66429256d4256, type: 3}
   player: {fileID: 187492691}
-  playerLife: 5
+  playerLife: 10
   rangeShoot: 300
   timerDamage: 0.1
   cooldownDamage: 0.1
@@ -1806,6 +1806,10 @@ PrefabInstance:
       propertyPath: bounce
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 5835413941442888029, guid: c65908eab50816549ae66429256d4256, type: 3}
+      propertyPath: _Script
+      value: 
+      objectReference: {fileID: 611912817}
     - target: {fileID: 5835413941442888029, guid: c65908eab50816549ae66429256d4256, type: 3}
       propertyPath: enemyLife
       value: 5
