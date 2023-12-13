@@ -158,6 +158,7 @@ MonoBehaviour:
   Enemy: {fileID: 5506656510856936979, guid: c65908eab50816549ae66429256d4256, type: 3}
   player: {fileID: 187492691}
   playerLife: 10
+  _maxLife: 0
   rangeShoot: 300
   timerDamage: 0.1
   cooldownDamage: 0.1
@@ -714,39 +715,45 @@ MonoBehaviour:
   - Level: 1
     Name: ATK
     Cost: 10
-    Damage: 10
+    Value: 10
     SpriteIcon: {fileID: 21300000, guid: 6e45eaada46581746a9cad69be55d997, type: 3}
     Augmentation: 1.1
+    ValueUp: 0.5
   - Level: 1
     Name: HP
-    Cost: 100
-    Damage: 100
+    Cost: 5
+    Value: 100
     SpriteIcon: {fileID: 21300000, guid: 97c7cbe9f982f274597a7306e9e970e7, type: 3}
     Augmentation: 1.2
+    ValueUp: 0.5
   - Level: 1
     Name: HP Recovery
-    Cost: 50
-    Damage: 5
+    Cost: 5
+    Value: 5
     SpriteIcon: {fileID: 21300000, guid: e57d4ffc52f12bb4b83ef91352e3f941, type: 3}
     Augmentation: 1.3
+    ValueUp: 0.3
   - Level: 1
     Name: ATK Speed
     Cost: 60
-    Damage: 40
+    Value: 1
     SpriteIcon: {fileID: 21300000, guid: f1768e6b2125bf34181dad5d9ab7ddae, type: 3}
     Augmentation: 1.4
+    ValueUp: 0.01
   - Level: 0
     Name: 
     Cost: 0
-    Damage: 0
+    Value: 0
     SpriteIcon: {fileID: 0}
     Augmentation: 0
+    ValueUp: 0
   - Level: 0
     Name: 
     Cost: 0
-    Damage: 0
+    Value: 0
     SpriteIcon: {fileID: 0}
     Augmentation: 0
+    ValueUp: 0
   Quests: []
   PrefabPowerUp: {fileID: 2141299525335161691, guid: c93a7e4b8f9e7ab49abc21cc86f7724e, type: 3}
   PrefabParent: {fileID: 1145401597}
@@ -1812,7 +1819,7 @@ PrefabInstance:
       objectReference: {fileID: 611912817}
     - target: {fileID: 5835413941442888029, guid: c65908eab50816549ae66429256d4256, type: 3}
       propertyPath: enemyLife
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5918080036846988258, guid: c65908eab50816549ae66429256d4256, type: 3}
       propertyPath: m_RootOrder

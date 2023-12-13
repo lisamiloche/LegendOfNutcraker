@@ -28,7 +28,7 @@ public class PowerUp : MonoBehaviour
         print(_mainGame);
         _powerUP = powerUP;
         Icon.sprite = powerUP.SpriteIcon;
-        TextName.text = powerUP.Name + System.Environment.NewLine + Mathf.Round(powerUP.Damage);
+        TextName.text = powerUP.Name + System.Environment.NewLine + powerUP.Value.ToString("F2");
         TextCost.text = Mathf.Round(powerUP.Cost) + "£";
         TextLevel.text = "Lv: " + powerUP.Level;
     }
@@ -53,7 +53,7 @@ public class PowerUp : MonoBehaviour
         }
         _powerUP.Level++;
         _powerUP.Cost *= _powerUP.Augmentation;
-        _powerUP.Damage *= 1.1f;
+        _powerUP.Value *= (1 + _powerUP.ValueUp);
         Initialize(_powerUP);
     }
 
