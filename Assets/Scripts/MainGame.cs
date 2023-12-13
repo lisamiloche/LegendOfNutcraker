@@ -25,7 +25,7 @@ public class MainGame : MonoBehaviour
         {
             GameObject go = GameObject.Instantiate(PrefabPowerUp, PrefabParent.transform, false);
             go.transform.localPosition = Vector3.zero;
-            go.GetComponent<PowerUp>().Initialize(Powerup);
+            go.GetComponent<PowerUp>().Initialize(Powerup,this);
         }
         foreach (var quest in Quests)
         {

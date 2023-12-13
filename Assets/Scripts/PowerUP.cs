@@ -11,7 +11,7 @@ using UnityEngine;
 [Serializable]
 public class PowerUp : MonoBehaviour
 {
-    
+
     public Image Icon;
     public TMP_Text TextLevel;
     public TMP_Text TextName;
@@ -22,26 +22,30 @@ public class PowerUp : MonoBehaviour
     MainGame _mainGame;
 
 
-
-    public void Initialize(PowerUpScroll powerUP)
+    public void Initialize(PowerUpScroll powerUP, MainGame mainGame = null)
     {
+        if(mainGame) _mainGame = mainGame;
+        print(_mainGame);
         _powerUP = powerUP;
         Icon.sprite = powerUP.SpriteIcon;
         TextName.text = powerUP.Name + System.Environment.NewLine + Mathf.Round(powerUP.Damage);
         TextCost.text = Mathf.Round(powerUP.Cost) + "£";
         TextLevel.text = "Lv: " + powerUP.Level;
     }
-    
+
 
 
     public void OnClick()
     {
-        money = GetComponent<MainGame>().Money;
-        money -= _powerUP.Cost;
+        print("click and " + _mainGame);
+        if (_mainGame)
+        {
+            _mainGame.Money -= _powerUP.Cost;
+        }
         _powerUP.Level++;
         _powerUP.Cost *= _powerUP.Augmentation;
         _powerUP.Damage *= 1.1f;
-        Initialize(_powerUP); 
+        Initialize(_powerUP);
     }
 
 
