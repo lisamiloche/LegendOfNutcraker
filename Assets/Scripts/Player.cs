@@ -12,6 +12,9 @@ public class Player : MonoBehaviour
     public GameObject player;
     public int playerLife;
     public int rangeShoot;
+    public float timerDamage;
+    public float cooldownDamage;
+    public bool isOkayToScroll;
 
 
     private void Update()
@@ -19,21 +22,37 @@ public class Player : MonoBehaviour
         ShootNearestEnemy();
     }
 
-    public void OnTriggerEnter2D(Collider2D col)
+    public void OnTriggerStay2D(Collider2D col)
     {
         if (col.gameObject.name == "Enemy")
         {
-            playerLife--;
-            Debug.Log(playerLife);
+            Enemies enemies = col.GetComponent<Enemies>();
 
-            
-            if (playerLife <= 0 )
+            if (timerDamage > 0)
             {
-                Destroy(player); //animation de mort
+                timerDamage -= Time.deltaTime;
+                Debug.Log(timerDamage);
+            }
+
+            if (timerDamage <= 0)
+            {
+                playerLife--;
+                Debug.Log(playerLife);
+
+                if (playerLife <= 0)
+                {
+                    Destroy(player); //animation de mort
+                }
+                timerDamage = cooldownDamage;
+            }
+
+
+            if (enemies != null)
+            {
+                enemies.HandleCollision();
             }
         }
     }
-
 
     void ShootNearestEnemy()
     {
@@ -66,13 +85,23 @@ public class Player : MonoBehaviour
                     GameObject spell = Instantiate(spellPrefab, transform.position, Quaternion.identity);
                     Enemy = nearestEnemy;
                 }
-                
+
             }
+
 
         }
 
+        /*if (GameObject.FindWithTag("Spell") == null)
+        {
+            isOkayToScroll = true;
+        }
+        else
+        {
+            isOkayToScroll = false;
+        }*/
 
     }
-
 }
+
+
 

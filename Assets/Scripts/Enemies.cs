@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor.Experimental.GraphView;
+using UnityEditor.Networking.PlayerConnection;
 using UnityEngine;
 
 public class Enemies : MonoBehaviour
@@ -11,12 +12,18 @@ public class Enemies : MonoBehaviour
     public int enemyLife;
     public int enemyDamage;
     public GameObject Enemy;
-    MainGame MainGame;
     public int MoneyEarn;
+    private bool isCollided = false;
 
     void Update()
     {
-        transform.Translate(Vector2.left * speed * Time.deltaTime);
+
+        if (!isCollided)
+        {
+            MoveEnemy();
+        }
+
+
         Died();
     }
 
@@ -28,4 +35,17 @@ public class Enemies : MonoBehaviour
             //MainGame.Money += MoneyEarn; //pb avec cette ligne
         }
     }
-}
+
+
+    public void HandleCollision()
+    {
+        speed = 0;
+    }
+
+
+        public void MoveEnemy()
+    {
+        transform.Translate(Vector2.left * speed * Time.deltaTime);
+    }
+    
+} 

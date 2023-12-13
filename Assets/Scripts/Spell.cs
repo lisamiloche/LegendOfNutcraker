@@ -12,10 +12,16 @@ public class Spell : MonoBehaviour
     public GameObject Enemy;
     Enemies enemies;
     public int speed;
+    public float TimerDeleteSpell;
 
     public void Update()
     {
         Direction();
+        TimerDeleteSpell--;
+        if (TimerDeleteSpell <= 0)
+        {
+            Destroy(spellPrefab);
+        }
         
     }
 
