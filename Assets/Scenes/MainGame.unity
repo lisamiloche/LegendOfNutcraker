@@ -159,6 +159,8 @@ MonoBehaviour:
   player: {fileID: 187492691}
   playerLife: 5
   rangeShoot: 300
+  timerDamage: 0.1
+  cooldownDamage: 0.1
 --- !u!212 &187492693
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -219,7 +221,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 187492691}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.15, y: -0.041, z: 0}
+  m_LocalPosition: {x: -0.06, y: -0.041, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -269,7 +271,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.3, y: 1.3}
   m_EdgeRadius: 0
 --- !u!1 &358112071
 GameObject:
@@ -1612,6 +1614,14 @@ PrefabInstance:
       propertyPath: Enemy
       value: 
       objectReference: {fileID: 2682735130181669517}
+    - target: {fileID: 5835413941442888029, guid: c65908eab50816549ae66429256d4256, type: 3}
+      propertyPath: bounce
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5835413941442888029, guid: c65908eab50816549ae66429256d4256, type: 3}
+      propertyPath: enemyLife
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 5918080036846988258, guid: c65908eab50816549ae66429256d4256, type: 3}
       propertyPath: m_RootOrder
       value: 4
