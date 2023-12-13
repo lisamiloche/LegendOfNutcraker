@@ -17,6 +17,7 @@ public class MainGame : MonoBehaviour
     public GameObject MoneyHolder;
     public TMP_Text TextMoney;
     public float Money;
+    PowerUp _haspowerUp;
     
 
     void Start()
@@ -39,8 +40,8 @@ public class MainGame : MonoBehaviour
 
     private void Update()
     {
-       // Money = GetComponent<PowerUp>().money;
         TextMoney.text = Money.ToString();
+        
         
     }
 

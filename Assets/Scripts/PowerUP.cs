@@ -33,6 +33,15 @@ public class PowerUp : MonoBehaviour
         TextLevel.text = "Lv: " + powerUP.Level;
     }
 
+    void Update()
+    {
+        if (_mainGame.Money <= _powerUP.Cost)
+        {
+            button.interactable = false;
+        }
+        else button.interactable = true;
+
+    }
 
 
     public void OnClick()
