@@ -19,12 +19,13 @@ public class MainGame : MonoBehaviour
     public float Money;
     PowerUp _haspowerUp;
     public GameObject PopUp;
-    int _timeChest = 1000 * 300;
+    int _timeChest = 1000 * 100;
     public int timePopUp = 0;
     
 
     void Start()
     {
+        PopUp.SetActive(false);
         foreach (var Powerup in PowerUps)
         {
             GameObject go = GameObject.Instantiate(PrefabPowerUp, PrefabParent.transform, false);
@@ -48,6 +49,7 @@ public class MainGame : MonoBehaviour
         timePopUp++;
         if (timePopUp == _timeChest)
         {
+            Time.timeScale = 0f;
             Chest();
         }
     }

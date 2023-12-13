@@ -15,5 +15,6 @@ public class Chest : MonoBehaviour
         game.Money += 100;
         game.PopUp.SetActive(false);
         game.timePopUp = 0;
+        Time.timeScale = 1f;
     }
 }
