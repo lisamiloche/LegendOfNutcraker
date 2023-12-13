@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     public float timerDamage;
     public float cooldownDamage;
     public bool isOkayToScroll;
+    Enemies enemies;
 
 
     private void Update()
@@ -36,7 +37,7 @@ public class Player : MonoBehaviour
 
             if (timerDamage <= 0)
             {
-                playerLife--;
+                playerLife -= enemies.enemyDamage;
                 Debug.Log(playerLife);
 
                 if (playerLife <= 0)

@@ -38,18 +38,6 @@ public class Parallax : MonoBehaviour
         }
     }
 
-    /*void Kaka()
-    {
-        if (GameObject.FindWithTag("Spell") == null)
-        {
-            isOkayToScroll = true;
-        }
-        else
-        {
-            isOkayToScroll = false;
-        }
-    }*/
-
     void Update()
     {
         if (GameObject.FindWithTag("Spell") == null)
