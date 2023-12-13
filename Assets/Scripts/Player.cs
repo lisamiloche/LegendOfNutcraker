@@ -11,16 +11,33 @@ public class Player : MonoBehaviour
     public GameObject Enemy;
     public GameObject player;
     public int playerLife;
+    public int _maxLife;
     public int rangeShoot;
     public float timerDamage;
     public float cooldownDamage;
     public bool isOkayToScroll;
     Enemies enemies;
+    private MainGame mainGame;
+    int _timeRecovery = 0;
+    float _timeShoot = 1000;
 
+    private void Start()
+    {
+        mainGame = FindFirstObjectByType<MainGame>();
+        _maxLife = (int)mainGame.PowerUps[1].Value;
+        playerLife = _maxLife;
+        _timeShoot /= mainGame.PowerUps[3].Value;
+    }
 
     private void Update()
     {
         ShootNearestEnemy();
+        _maxLife = (int)mainGame.PowerUps[1].Value;
+        if (playerLife < _maxLife )
+        {
+            Recovery();
+        }
+        else playerLife = _maxLife;
     }
 
     public void OnTriggerStay2D(Collider2D col)
@@ -32,7 +49,7 @@ public class Player : MonoBehaviour
             if (timerDamage > 0)
             {
                 timerDamage -= Time.deltaTime;
-                Debug.Log(timerDamage);
+                //Debug.Log(timerDamage);
             }
 
             if (timerDamage <= 0)
@@ -81,10 +98,16 @@ public class Player : MonoBehaviour
             {
                 if (GameObject.FindWithTag("Spell") == null)
                 {
-                    Vector3 spawnSpell = transform.position;
+                    if (_timeShoot == 0)
+                    {
+                        Vector3 spawnSpell = transform.position;
 
-                    GameObject spell = Instantiate(spellPrefab, transform.position, Quaternion.identity);
-                    Enemy = nearestEnemy;
+                        GameObject spell = Instantiate(spellPrefab, transform.position, Quaternion.identity);
+                        Enemy = nearestEnemy;
+                        _timeShoot *= mainGame.PowerUps[3].Value;
+                    }
+                    else
+                        _timeShoot -- ;
                 }
 
             }
@@ -101,6 +124,19 @@ public class Player : MonoBehaviour
             isOkayToScroll = false;
         }*/
 
+    }
+
+    public void Recovery()
+    {
+        
+        if (_timeRecovery == 1000)
+        {
+            playerLife += (int)mainGame.PowerUps[2].Value;
+            _timeRecovery = 0;
+        }
+        else _timeRecovery++;
+
+     
     }
 }
 
