@@ -149,6 +149,7 @@ MonoBehaviour:
   enemyDamage: 2
   Enemy: {fileID: 5506656510856936979}
   MoneyEarn: 20
+  _Script: {fileID: 1204798542370347560, guid: 8d9c85cde7b47174b9ad2b6cbe6717e8, type: 3}
 --- !u!50 &3304240532290754800
 Rigidbody2D:
   serializedVersion: 4

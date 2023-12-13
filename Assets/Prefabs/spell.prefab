@@ -103,6 +103,7 @@ MonoBehaviour:
   PowerUP: {fileID: 2141299525335161691, guid: c93a7e4b8f9e7ab49abc21cc86f7724e, type: 3}
   speed: 5
   TimerDeleteSpell: 550
+  Damage: 0
 --- !u!61 &407998571659815741
 BoxCollider2D:
   m_ObjectHideFlags: 0

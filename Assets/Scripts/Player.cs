@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
-using UnityEditor.Experimental.GraphView;
-using UnityEditor.SceneManagement;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -97,17 +95,12 @@ public class Player : MonoBehaviour
             if (nearestDistance <= rangeShoot)
             {
                 if (GameObject.FindWithTag("Spell") == null)
-                {
-                    if (_timeShoot == 0)
-                    {
+                { 
                         Vector3 spawnSpell = transform.position;
 
                         GameObject spell = Instantiate(spellPrefab, transform.position, Quaternion.identity);
                         Enemy = nearestEnemy;
-                        _timeShoot *= mainGame.PowerUps[3].Value;
-                    }
-                    else
-                        _timeShoot -- ;
+                        
                 }
 
             }

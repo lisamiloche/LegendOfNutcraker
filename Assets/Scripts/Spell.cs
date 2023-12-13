@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
+using TMPro.Examples;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -39,9 +39,14 @@ public class Spell : MonoBehaviour
         if (col.CompareTag("Enemy"))
         {
             Destroy(spellPrefab);
-            enemies = GameObject.Find("Enemy").GetComponent<Enemies>();
-            Damage = mainGame.PowerUps[0].Value;
-            enemies.enemyLife-= (int) Damage;
+            enemies = Enemy.GetComponent<Enemies>();
+            if (col.TryGetComponent<Enemies>(out enemies))
+            {
+                Damage = mainGame.PowerUps[0].Value;
+                enemies.enemyLife -= (int)Damage;
+                //Debug.Log(enemies.enemyLife);
+            }
+           
             //Debug.Log(enemies.enemyLife);
 
         }
