@@ -662,8 +662,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 250, y: -91.9}
-  m_SizeDelta: {x: 512, y: 128}
+  m_AnchoredPosition: {x: 232.08002, y: -93.85501}
+  m_SizeDelta: {x: 464.16, y: 128}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &495491432
 MonoBehaviour:
@@ -1062,15 +1062,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: 0
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d625fdee204d09344b8c84835a5ae6f0, type: 2}
+  m_sharedMaterial: {fileID: 4553771478744146443, guid: d625fdee204d09344b8c84835a5ae6f0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4283045228
+  m_fontColor: {r: 0.42352945, g: 0.08235294, b: 0.2901961, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1525,15 +1525,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Lvl 1 wsh
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d625fdee204d09344b8c84835a5ae6f0, type: 2}
+  m_sharedMaterial: {fileID: 4553771478744146443, guid: d625fdee204d09344b8c84835a5ae6f0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4283045228
+  m_fontColor: {r: 0.42352945, g: 0.08235294, b: 0.2901961, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1556,7 +1556,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -2483,8 +2483,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: OPEN
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 98ef7599a22814248ae38810eda80b5b, type: 2}
-  m_sharedMaterial: {fileID: -1058660429213912864, guid: 98ef7599a22814248ae38810eda80b5b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d625fdee204d09344b8c84835a5ae6f0, type: 2}
+  m_sharedMaterial: {fileID: 4553771478744146443, guid: d625fdee204d09344b8c84835a5ae6f0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2744,8 +2744,8 @@ MonoBehaviour:
 
     Open it to get more candies!'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 98ef7599a22814248ae38810eda80b5b, type: 2}
-  m_sharedMaterial: {fileID: -1058660429213912864, guid: 98ef7599a22814248ae38810eda80b5b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d625fdee204d09344b8c84835a5ae6f0, type: 2}
+  m_sharedMaterial: {fileID: 4553771478744146443, guid: d625fdee204d09344b8c84835a5ae6f0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
