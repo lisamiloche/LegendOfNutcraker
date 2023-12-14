@@ -2483,8 +2483,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: OPEN
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d625fdee204d09344b8c84835a5ae6f0, type: 2}
-  m_sharedMaterial: {fileID: 4553771478744146443, guid: d625fdee204d09344b8c84835a5ae6f0, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 98ef7599a22814248ae38810eda80b5b, type: 2}
+  m_sharedMaterial: {fileID: -1058660429213912864, guid: 98ef7599a22814248ae38810eda80b5b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2744,8 +2744,8 @@ MonoBehaviour:
 
     Open it to get more candies!'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d625fdee204d09344b8c84835a5ae6f0, type: 2}
-  m_sharedMaterial: {fileID: 4553771478744146443, guid: d625fdee204d09344b8c84835a5ae6f0, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 98ef7599a22814248ae38810eda80b5b, type: 2}
+  m_sharedMaterial: {fileID: -1058660429213912864, guid: 98ef7599a22814248ae38810eda80b5b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
