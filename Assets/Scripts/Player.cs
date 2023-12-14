@@ -5,6 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class Player : MonoBehaviour
 {
     public GameObject spellPrefab;
@@ -74,9 +75,11 @@ public class Player : MonoBehaviour
                 {
                     playerLife -= enemies.enemyDamage;
                     Debug.Log(playerLife);
+                    SetAnimation("hit", false);
 
                     if (playerLife <= 0)
                     {
+                        SetAnimation("death", true);
                         Destroy(player);
                     }
                     timerDamage = cooldownDamage;
@@ -120,6 +123,8 @@ public class Player : MonoBehaviour
 
                         GameObject spell = Instantiate(spellPrefab, transform.position, Quaternion.identity);
                         Enemy = nearestEnemy;
+                        SetAnimation("attack", false);
+
                 }
 
 
@@ -150,7 +155,7 @@ public class Player : MonoBehaviour
         }
 
 
-        private void SetAnimation(string animationName, bool loop)
+        public void SetAnimation(string animationName, bool loop)
         {
             spineAnimationState.SetAnimation(0, animationName, loop);
         }

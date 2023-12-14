@@ -50,6 +50,7 @@ public class Enemies : MonoBehaviour
     {
         if (enemyLife <= 0)
         {
+            SetAnimation("death", false);
             Destroy(Enemy);
             game.Money += MoneyEarn;
             spawner.enemiesAlive--;
