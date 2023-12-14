@@ -1,7 +1,9 @@
+using Spine.Unity;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -18,9 +20,26 @@ public class Player : MonoBehaviour
     private MainGame mainGame;
     int _timeRecovery = 0;
     float _timeShoot = 1000;
+    public Image HealthBar;
+
+    SkeletonAnimation skeletonAnimation;
+    public Spine.AnimationState spineAnimationState;
+    public Spine.Skeleton skeleton;
+
+
+    private void Awake()
+    {
+        UpdateLife();
+    }
 
     private void Start()
     {
+        skeletonAnimation = GetComponent<SkeletonAnimation>();
+        spineAnimationState = skeletonAnimation.AnimationState;
+        skeleton = skeletonAnimation.Skeleton;
+
+        SetAnimation("walk", true);
+
         mainGame = FindFirstObjectByType<MainGame>();
         _maxLife = (int)mainGame.PowerUps[1].Value;
         playerLife = _maxLife;
@@ -31,107 +50,113 @@ public class Player : MonoBehaviour
     {
         ShootNearestEnemy();
         _maxLife = (int)mainGame.PowerUps[1].Value;
-        if (playerLife < _maxLife )
+        if (playerLife < _maxLife)
         {
             Recovery();
         }
         else playerLife = _maxLife;
+
     }
 
-    public void OnTriggerStay2D(Collider2D col)
-    {
-        if (col.gameObject.name == "Enemy")
+        void OnTriggerStay2D(Collider2D col)
         {
-            Enemies enemies = col.GetComponent<Enemies>();
-
-            if (timerDamage > 0)
+            if (col.gameObject.name == "Enemy")
             {
-                timerDamage -= Time.deltaTime;
-                //Debug.Log(timerDamage);
-            }
+                Enemies enemies = col.GetComponent<Enemies>();
 
-            if (timerDamage <= 0)
-            {
-                playerLife -= enemies.enemyDamage;
-                Debug.Log(playerLife);
-
-                if (playerLife <= 0)
+                if (timerDamage > 0)
                 {
-                    Destroy(player); //animation de mort
+                    timerDamage -= Time.deltaTime;
+                    //Debug.Log(timerDamage);
                 }
-                timerDamage = cooldownDamage;
-            }
+
+                if (timerDamage <= 0)
+                {
+                    playerLife -= enemies.enemyDamage;
+                    Debug.Log(playerLife);
+
+                    if (playerLife <= 0)
+                    {
+                        Destroy(player);
+                    }
+                    timerDamage = cooldownDamage;
+                }
 
 
-            if (enemies != null)
-            {
-                enemies.HandleCollision();
+                if (enemies != null)
+                {
+                    enemies.HandleCollision();
+                }
             }
         }
-    }
 
-    void ShootNearestEnemy()
-    {
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-
-
-        if (enemies.Length > 0)
+        void ShootNearestEnemy()
         {
-            GameObject nearestEnemy = null;
-            float nearestDistance = Mathf.Infinity;
+            GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
-            foreach (GameObject enemy in enemies)
+
+            if (enemies.Length > 0)
             {
-                float distance = Vector2.Distance(transform.position, enemy.transform.position);
+                GameObject nearestEnemy = null;
+                float nearestDistance = Mathf.Infinity;
 
-                if (distance < nearestDistance)
+                foreach (GameObject enemy in enemies)
                 {
-                    nearestDistance = distance;
-                    nearestEnemy = enemy;
+                    float distance = Vector2.Distance(transform.position, enemy.transform.position);
+
+                    if (distance < nearestDistance)
+                    {
+                        nearestDistance = distance;
+                        nearestEnemy = enemy;
+                    }
+
                 }
 
-            }
-
-            if (nearestDistance <= rangeShoot)
-            {
-                if (GameObject.FindWithTag("Spell") == null)
-                { 
+                if (nearestDistance <= rangeShoot)
+                {
+                    if (GameObject.FindWithTag("Spell") == null)
+                    {
                         Vector3 spawnSpell = transform.position;
 
                         GameObject spell = Instantiate(spellPrefab, transform.position, Quaternion.identity);
                         Enemy = nearestEnemy;
-                        
                 }
+
+
+                }
+
 
             }
 
-
         }
 
-        /*if (GameObject.FindWithTag("Spell") == null)
-        {
-            isOkayToScroll = true;
-        }
-        else
-        {
-            isOkayToScroll = false;
-        }*/
-
-    }
-
-    public void Recovery()
+    private void UpdateLife()
     {
-        
-        if (_timeRecovery == 1000)
-        {
-            playerLife += (int)mainGame.PowerUps[2].Value;
-            _timeRecovery = 0;
-        }
-        else _timeRecovery++;
-
-     
+        float percent = (float)playerLife / (float)_maxLife;
+        HealthBar.fillAmount = percent;
     }
+
+    void Recovery()
+        {
+
+            if (_timeRecovery == 1000)
+            {
+                playerLife += (int)mainGame.PowerUps[2].Value;
+                _timeRecovery = 0;
+            }
+            else _timeRecovery++;
+
+
+        }
+
+
+        private void SetAnimation(string animationName, bool loop)
+        {
+            spineAnimationState.SetAnimation(0, animationName, loop);
+        }
+
 }
+
 
 
 

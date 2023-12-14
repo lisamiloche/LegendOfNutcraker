@@ -1,3 +1,5 @@
+using Spine.Unity;
+using Spine;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -15,10 +17,22 @@ public class Enemies : MonoBehaviour
     private MainGame game;
     private EnemySpawner spawner;
 
+    SkeletonAnimation skeletonAnimation;
+    public Spine.AnimationState spineAnimationState;
+    public Spine.Skeleton skeleton;
+
     private void Start()
     {
+        skeletonAnimation = GetComponent<SkeletonAnimation>();
+        spineAnimationState = skeletonAnimation.AnimationState;
+        skeleton = skeletonAnimation.Skeleton;
+
+        SetAnimation("walk", true);
+
         spawner = FindFirstObjectByType<EnemySpawner>();
         game = FindFirstObjectByType<MainGame>();
+
+
     }
 
 
@@ -53,5 +67,12 @@ public class Enemies : MonoBehaviour
     {
         transform.Translate(Vector2.left * speed * Time.deltaTime);
     }
-    
+
+
+
+    private void SetAnimation(string animationName, bool loop)
+    {
+        spineAnimationState.SetAnimation(0, animationName, loop);
+    }
+
 } 

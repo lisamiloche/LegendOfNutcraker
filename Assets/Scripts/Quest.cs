@@ -16,9 +16,4 @@ public class Quest : MonoBehaviour
         _quest = quests;
         TextQuests.text = quests.Quests;
     }
-
-
-
-
-
 }

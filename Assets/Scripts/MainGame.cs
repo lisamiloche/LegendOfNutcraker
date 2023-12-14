@@ -19,8 +19,8 @@ public class MainGame : MonoBehaviour
     public float Money;
     PowerUp _haspowerUp;
     public GameObject PopUp;
-    int _timeChest = 1000 * 100;
-    public int timePopUp = 0;
+    private EnemySpawner _enemySpawner;
+    
     
 
     void Start()
@@ -45,20 +45,21 @@ public class MainGame : MonoBehaviour
     private void Update()
     {
         TextMoney.text = Money.ToString();
+        _enemySpawner = FindFirstObjectByType<EnemySpawner>();
 
-        timePopUp++;
-        if (timePopUp == _timeChest)
-        {
-            Time.timeScale = 0f;
-            Chest();
-        }
+        Chest();
+        
     }
 
 
     public void Chest()
     {
-        PopUp.SetActive(true);
+        if (_enemySpawner.isBossDead == true)
+        {
+            PopUp.SetActive(true);
+        }
     }
+
 
     
 }
