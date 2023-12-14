@@ -12,7 +12,8 @@ using UnityEngine;
 public class PowerUp : MonoBehaviour
 {
 
-    public Image Icon;
+
+    public Image Bg;
     public TMP_Text TextLevel;
     public TMP_Text TextName;
     public TMP_Text TextCost;
@@ -27,10 +28,10 @@ public class PowerUp : MonoBehaviour
         if(mainGame) _mainGame = mainGame;
         print(_mainGame);
         _powerUP = powerUP;
-        Icon.sprite = powerUP.SpriteIcon;
         TextName.text = powerUP.Name + System.Environment.NewLine + powerUP.Value.ToString("F2");
-        TextCost.text = Mathf.Round(powerUP.Cost) + "£";
-        TextLevel.text = "Lv: " + powerUP.Level;
+        TextCost.text = Mathf.Round(powerUP.Cost)+"";
+        Bg.sprite = powerUP.Bg;
+        TextLevel.text = "Lv " + powerUP.Level;
     }
 
     void Update()

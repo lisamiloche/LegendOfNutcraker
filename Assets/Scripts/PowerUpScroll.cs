@@ -11,8 +11,8 @@ public class PowerUpScroll
     public string Name;
     public float Cost;
     public float Value;
-    public Sprite SpriteIcon;
     public float Augmentation; 
     public float ValueUp;
+    public Sprite Bg;
 
 }

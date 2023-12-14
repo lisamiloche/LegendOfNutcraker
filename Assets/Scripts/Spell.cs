@@ -40,14 +40,13 @@ public class Spell : MonoBehaviour
         {
             Destroy(spellPrefab);
             enemies = Enemy.GetComponent<Enemies>();
+
             if (col.TryGetComponent<Enemies>(out enemies))
             {
                 Damage = mainGame.PowerUps[0].Value;
                 enemies.enemyLife -= (int)Damage;
-                //Debug.Log(enemies.enemyLife);
+                Debug.Log(enemies.enemyLife);
             }
-           
-            //Debug.Log(enemies.enemyLife);
 
         }
     }

@@ -36,7 +36,7 @@ public class EnemySpawner : MonoBehaviour
             Spawner();
             enemiesLeftToSpawn--;
             enemiesAlive++;
-            Debug.Log(enemiesAlive);
+            //Debug.Log(enemiesAlive);
             timeSinceLastSpawn = 0f;
         }
 
